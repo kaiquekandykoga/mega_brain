@@ -17,18 +17,19 @@ For each task you receive:
 3. **Green**: write the minimum code in `lib/` to make the test pass.
 4. **Refactor**: improve names and structure while keeping the suite green.
 5. Run `bundle exec rake` and fix every test failure and RuboCop offense.
-6. Run `git diff` and confirm there are no comments and no secrets in the change.
+6. Run `git diff` and confirm there are no comments other than `# frozen_string_literal: true` and no secrets in the change.
 7. Report back: files changed, tests added, the command output summary, and any open questions.
 
 ## Ruby standards
 
 - Target Ruby 3.3 and newer. Keep code compatible with 3.3, 3.4, and 4.0.
-- No comments of any kind in Ruby files, including magic comments. Use intention-revealing names and small methods instead.
+- Every Ruby file starts with `# frozen_string_literal: true` followed by a blank line.
+- No other comments in Ruby files. Use intention-revealing names and small methods instead.
 - Everything lives under the `MegaBrain` namespace. One constant per file, with paths mirroring constants.
 - Require files from `lib/mega_brain.rb` using `require_relative`.
 - Custom errors inherit from `MegaBrain::Error`.
 - Prefer plain Ruby objects, composition, dependency injection, and immutable value objects.
-- Freeze constant strings explicitly with `.freeze`.
+- Rely on `# frozen_string_literal: true` for string literals. Do not add redundant `.freeze` calls.
 - Use the Ruby standard library. Do not add runtime dependencies. Development dependencies go in the `Gemfile`, not the gemspec.
 - Keep the public API small and deliberate. Mark internals `private`.
 - Markdown files you create have uppercase names, for example `doc/AGENT_LOOP.md`.

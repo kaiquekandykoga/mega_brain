@@ -14,7 +14,7 @@ Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 
 Style/FrozenStringLiteralComment:
-  Enabled: false
+  EnforcedStyle: always
 
 Style/Documentation:
   Enabled: false

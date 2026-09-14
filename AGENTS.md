@@ -40,7 +40,7 @@ No production code is written without a failing test first. Bug fixes start with
 
 ### No comments in the codebase
 
-Ruby files contain no comments, including magic comments. Code explains itself through clear names, small methods, and tests. Explanations belong in `doc/`, `README.md`, commit messages, and pull request descriptions.
+Ruby files contain no comments. The only exception is the `# frozen_string_literal: true` magic comment, which is required as the first line of every Ruby file and enforced by RuboCop. Code explains itself through clear names, small methods, and tests. Explanations belong in `doc/`, `README.md`, commit messages, and pull request descriptions.
 
 ### Sensitive data is never committed or pushed
 
@@ -84,7 +84,7 @@ bundle exec rake        run tests and lint
 ## Definition of done
 
 - Tests were written first and `bundle exec rake` passes.
-- No comments were added to code.
+- No comments were added to code, and every Ruby file starts with `# frozen_string_literal: true`.
 - New Markdown files have uppercase names.
 - No secrets are present in the diff.
 - Public behavior changes are reflected in `doc/`, `README.md`, and `CHANGELOG.md`.

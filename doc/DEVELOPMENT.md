@@ -25,7 +25,8 @@ Development is test-driven:
 
 ## Conventions
 
-- No comments in Ruby files. Explanations belong in `doc/`.
+- Every Ruby file starts with `# frozen_string_literal: true`.
+- No other comments in Ruby files. Explanations belong in `doc/`.
 - One constant per file, paths mirror constants.
 - Test files are named `*_test.rb` and mirror `lib/` paths.
 - Markdown file names are uppercase, for example `doc/GETTING_STARTED.md`.

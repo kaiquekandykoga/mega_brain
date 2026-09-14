@@ -11,7 +11,7 @@ Thanks for helping improve Mega Brain.
 
 ## Rules
 
-- No comments in Ruby code.
+- Every Ruby file starts with `# frozen_string_literal: true`. No other comments in Ruby code.
 - No new runtime dependencies without prior discussion in an issue.
 - Never include secrets, API keys, or credentials in commits, tests, or issues.
 
